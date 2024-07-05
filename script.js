@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const logos = document.querySelectorAll('.logo');
+    const logo2 = document.querySelector('.logo2');
     const ambientSound = document.getElementById('ambientSound');
     const screamSound = document.getElementById('screamSound');
-    const unlockVideoDesktop = document.getElementById('unlockVideoDesktop');
-    const unlockVideoMobile = document.getElementById('unlockVideoMobile');
+    const unlockDiv = document.getElementById('unlockDiv');
+    const unlockLogo = document.getElementById('unlockLogo');
     const overlay = document.getElementById('overlay'); // Reference to the overlay div
     const closeOverlayButton = document.getElementById('close-overlay'); // Reference to the close button
     let clickCount = 0;
@@ -22,26 +23,34 @@ document.addEventListener("DOMContentLoaded", function() {
             logo.classList.add('swing');
             setTimeout(() => {
                 logo.classList.remove('swing');
-            }, 9000); // Match the longest duration of the swing animation
+            }, 9000); 
 
             clickCount++;
-            if (clickCount === 5) {
+            // Generate a random number between 3 and 7 (inclusive)
+            const randomTrigger = Math.floor(Math.random() * (7 - 3 + 1)) + 3;
+            
+            if (clickCount === randomTrigger) {
                 unlockSequence();
             }
         });
     });
 
     function unlockSequence() {
-        if (window.innerHeight > window.innerWidth) {
-            unlockVideoMobile.style.display = 'block';
-            unlockVideoMobile.play();
-        } else {
-            unlockVideoDesktop.style.display = 'block';
-            unlockVideoDesktop.play();
-        }
+        unlockDiv.style.display = 'flex';
+        unlockLogo.style.display = 'block';
         screamSound.play();
         setTimeout(() => {
             window.location.href = 'https://www.sweetdreamsbitterreality.com/collections/all';
         }, 5000);
     }
+    
+    function promptLogo() {
+        logo2.classList.add('prompt');
+        setTimeout(() => {
+            logo2.classList.remove('prompt');
+        }, 1000);
+    }
+
+    // Swing logo2 every 5 seconds
+    setInterval(promptLogo, 5000);
 });
