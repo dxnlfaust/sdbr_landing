@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBDR</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SDBR</title>
+    <link rel="stylesheet" href="landingStyles.css">
 </head>
 <body>
     <audio id="ambientSound" src="ambience.mp3" loop></audio>
@@ -12,26 +12,26 @@
 
     <div id="overlay">
         <div id="overlay-content">
-            <p>this webpage uses sound<br>turn up your volume</p>
-            <button id="close-overlay">close</button>
+            <p>This webpage uses sound.</p>
+            <button id="close-overlay">continue</button>
         </div>
     </div>
 
     <video id="backgroundVideo" autoplay loop muted playsinline>
-        <source src="forest.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="https://cdn.shopify.com/videos/c/o/v/37a44de10bfc4fbdacaaa885944f61e7.mp4" type="video/mp4">
     </video>
 
     <div id="container">
-        <img src="logo1.png" class="logo logo1" id="logo1" style="top: 5%; left: 10%;">
-        <img src="logo2.png" class="logo logo2" id="logo2" style="top: 23%; left: 35%;">
-        <img src="logo3.png" class="logo logo3" id="logo3" style="top: 7%; left: 50%;">
-        <img src="logo4.png" class="logo logo4" id="logo4" style="top: 13%; left: 70%;">
+        <img src="landingSticks1.png" class="logo logo1" id="logo1" style="top: 5%; left: 10%;">
+        <img src="landingSticks2.png" class="logo logo2" id="logo2" style="top: 23%; left: 35%;">
+        <img src="landingSticks3.png" class="logo logo3" id="logo3" style="top: 7%; left: 50%;">
+        <img src="landingSticks4.png" class="logo logo4" id="logo4" style="top: 13%; left: 70%;">
     </div>
 
-    <video id="unlockVideoDesktop" class="unlock-video" src="unlocked_desktop.mp4" type="video/mp4" style="display:none;"></video>
-    <video id="unlockVideoMobile" class="unlock-video" src="unlocked_mobile.mp4" type="video/mp4" style="display:none;"></video>
-
-    <script src="script.js"></script>
+    <div id="unlockDiv" class="unlock-div" style="display:none;">
+    <img id="unlockLogo" class="unlock-logo" src="landingLogoMain.png" style="display:none;">
+    </div>
+    
+    <script src="landingScript.js"></script>
 </body>
 </html>

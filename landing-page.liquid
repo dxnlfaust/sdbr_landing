@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ 'landingStyles.css' | asset_url }}">
+  </head>
+  <body>
+    <audio id="ambientSound" src="{{ 'ambience.mp3' | asset_url }}" loop></audio>
+    <audio id="screamSound" src="{{ 'scream.mp3' | asset_url }}"></audio>
+
+    <div id="overlay">
+      <div id="overlay-content">
+        <p>This webpage uses sound.</p>
+        <button id="close-overlay">continue</button>
+      </div>
+    </div>
+
+    <video id="backgroundVideo" autoplay loop muted playsinline>
+      <source src="{{ 'https://cdn.shopify.com/videos/c/o/v/37a44de10bfc4fbdacaaa885944f61e7.mp4' }}" type="video/mp4">
+    </video>
+
+    <div id="container">
+      <img src="{{ 'landingSticks1.png' | asset_url }}" class="logo logo1" id="logo1" style="top: 5%; left: 10%;">
+      <img src="{{ 'landingSticks2.png' | asset_url }}" class="logo logo2" id="logo2" style="top: 23%; left: 35%;">
+      <img src="{{ 'landingSticks3.png' | asset_url }}" class="logo logo3" id="logo3" style="top: 7%; left: 50%;">
+      <img src="{{ 'landingSticks4.png' | asset_url }}" class="logo logo4" id="logo4" style="top: 13%; left: 70%;">
+    </div>
+
+    <div id="unlockDiv" class="unlock-div" style="display:none;">
+      <img id="unlockLogo" class="unlock-logo" src="{{ 'landingLogoMain.png' | asset_url }}" style="display:none;">
+    </div>
+
+    <script src="{{ 'landingScript.js' | asset_url }}"></script>
+  </body>
+</html>
